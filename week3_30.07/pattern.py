@@ -38,7 +38,7 @@ def print_pattern(n):
 				for i in range(1, n + 1):
 					result.append("* " * (3 * n + 3 - n)+ "")
 					
-				return "\n".join(result) + "\nValid Number";
+				return "\n".join(result) + "\n";
 
 n = float(input("Enter a number: "))
 print()
