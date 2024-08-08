@@ -76,6 +76,7 @@ print(p);
 
 
 # this method prints the pattern with '+' and only one '-' at the bottom
+
 '''
 for example - 
 for n = 1
@@ -93,6 +94,7 @@ for n = 2
     -
 
 '''
+
 def print_pattern2(n):
 	# n is size or number of lines in the pattern
 	# for upper part
@@ -121,6 +123,7 @@ print_pattern2(user_input)
 print()
 			
 # this method prints the pattern with '+' in upper hollow pyramid and with '-' in lower inverted hollow pyramid
+
 '''
 for example - 
 for n = 1
@@ -138,6 +141,7 @@ for n = 2
     -
 
 '''		
+
 def print_pattern3(n):
 	# for upper part
 	inner_spaces = 3;
@@ -168,6 +172,7 @@ print()
 			
 			
 # this method works like % operator
+
 '''
 for example - 
 
@@ -176,6 +181,7 @@ Enter a denominator: -3
 -2.0
 
 '''
+
 def modulo(n , d):
 	div = n // d
 	mod = n - div * d
