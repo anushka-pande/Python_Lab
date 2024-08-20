@@ -12,6 +12,9 @@ def change_case(str, style):
 	
 def upper_c(str):
 	result = ""
+	if len(str) == 0:
+		return result
+	
 	for char in str:
 		if ord('a') <= ord(char) <= ord('z'):
 			result += chr(ord(char) - 32)
@@ -21,6 +24,9 @@ def upper_c(str):
 	
 def lower_s(str):
 	result = ""
+	if len(str) == 0:
+		return result
+	
 	for char in str:
 		if ord('A') <= ord(char) <= ord('Z'):
 			result += chr(ord(char) + 32)
@@ -30,6 +36,9 @@ def lower_s(str):
 	
 def swapcase_r(str):
 	result = ""
+	if len(str) == 0:
+		return result
+	
 	for char in str:
 		if ord('A') <= ord(char) <= ord('Z'):
 			result += chr(ord(char) + 32)
