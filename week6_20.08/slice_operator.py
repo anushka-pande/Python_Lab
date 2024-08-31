@@ -63,8 +63,8 @@ def slice(object, slicing_parameter):
 		return tuple(result)
 	return result
 	
-user_input_object = eval(input("Enter a object which you want to slice: "))
-user_input_slicing_parameter = eval(input("Enter a slicing parameter in a list format [start, stop, step]: "))
+object = eval(input("Enter a object which you want to slice: "))
+slicing_parameter = eval(input("Enter a slicing parameter in a list format [start, stop, step]: "))
 
-s = slice(user_input_object, user_input_slicing_parameter)
+s = slice(object, slicing_parameter)
 print(s)

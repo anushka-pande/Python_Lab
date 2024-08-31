@@ -36,6 +36,6 @@ def q1(text):
 		return "q1"
 
 
-user_input_string = input("Enter a string: ")
-dfa = dfa_endswithb(user_input_string)
+string = input("Enter a string: ")
+dfa = dfa_endswithb(string)
 print(dfa)
