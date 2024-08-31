@@ -95,15 +95,8 @@ def base(text, text_base, output_base):
 	text = str(text)
 		
 	# Handling Base prfixes
-	if text.startswith(('0x','0X')):
+	if (text.startswith(('0x','0X')) and text_base == 16) or (text.startswith(('0b','0B')) and text_base == 2) or (text.startswith(('0o', '0O')) and text_base == 8):
 		text = text[2:]
-		text_base = 16
-	elif text.startswith(('0b','0B')):
-		text = text[2:]
-		text_base = 2
-	elif text.startswith(('0o', '0O')):
-		text = text[2:]
-		text_base = 8
 	
 	# Converting the text to Decimal first
 	if text_base != 10:
