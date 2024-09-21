@@ -45,6 +45,26 @@ def check_performance(approaches):
 		avg_time_taken.append(sum(time_taken) / 500)
 	return avg_time_taken
 	
-print(check_performance([f1, f2]))
 
-# Create a function to call check_performance multiple times to check the winner function from f1 and f2
+def check_performance_multiple_times(iterations):
+	f1_wins = 0
+	f2_wins = 0
+	
+	for _ in range(iterations):
+		times = check_performance([f1, f2])
+		if times[0] < times[1]:
+			f1_wins += 1
+		elif times[0] > times[1]:
+			f2_wins += 1
+		
+	if f1_wins > f2_wins:
+		return f"f1 is faster: f1 won {f1_wins} times, f2 won {f2_wins} times"
+	elif f1_wins < f2_wins:
+		return f"f2 is faster: f1 won {f1_wins} times, f2 won {f2_wins} times"
+	else:
+		return f"It's a tie: both f1 and f2 won {f1_wins} times"	
+		
+		
+print(check_performance_multiple_times(200))
+
+
