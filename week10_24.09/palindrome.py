@@ -8,16 +8,15 @@ def fun(L):
 	set_of_count = {str, int}
 	
 	for item in L:
-		type_of_item = type(item)
-		if type_of_item in set_of_count:
-			if type_of_item == int:
+		if type(item) in set_of_count:
+			if type(item) == int:
 				item = str(item)
 			if len(item) % 6 == 3:
-				count += isPalindrome(item)
-		elif type_of_item in set_of_valid_obj:
-			count += fun(item)
+				count += 1
+		elif type(item) in set_of_valid_obj:
+			count += 1
 			
 	return count
 	
 L = eval(input("Enter a list object containing strings, integers, lists, tuples, or sets: "))
-print(f"NUmber of valid palindromes: {fun(L)}")
+print(f"Number of valid palindromes: {fun(L)}")
