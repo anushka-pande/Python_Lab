@@ -11,10 +11,10 @@ def fun(L):
 		if type(item) in set_of_count:
 			if type(item) == int:
 				item = str(item)
-			if len(item) % 6 == 3:
+			if len(item) % 6 == 3 and isPalindrome(item):
 				count += 1
 		elif type(item) in set_of_valid_obj:
-			count += 1
+			count += fun(list(item))
 			
 	return count
 	
