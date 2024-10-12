@@ -3,10 +3,10 @@ import time
 
 # Function to display a welcome message with a delay for effect
 def welcome_message():
-	print("**************************************")
-	print("*      Welcome to Tic-Tac-Toe!       *")
-	print("*    Get ready to have some fun!     *")
-	print("**************************************")
+	print("***********************************************************")
+	print("*               Welcome to Tic-Tac-Toe!                   *")
+	print("*             Get ready to have some fun!                 *")
+	print("***********************************************************")
 	time.sleep(1)	# A short pause for dramatice effect
 	print("\nLet's get started!")
 
@@ -40,11 +40,11 @@ def check_result(game_state, size):
 	
 	# Check the main diagonal for a winner
 	if game_state[1][1] != " " and all(game_state[i][i] == game_state[1][1] for i in range(1, size + 1)):
-		return gaem_state[1][1]
+		return game_state[1][1]
 	
 	# Check the anti-diagonal for a winner
 	if game_state[1][size] != " " and all(game_state[i][size - i + 1] == game_state[1][size] for i in range(1, size + 1)):
-		return gaem_state[1][size]
+		return game_state[1][size]
 	
 	return None	# No winner yet or Tie
 
@@ -60,7 +60,6 @@ def start_game(game_state, size):
 		players[1] = player2[1].upper()
 	
 	current_player = random.choice(players)	# Randomly pick the starting player
-	previous_player = current_player
 	moves = 0	# Track the number of moves made
 	grid = size * size	# Total number of cells
 	
@@ -68,11 +67,7 @@ def start_game(game_state, size):
 	display_layout(game_state, size)	# Display initial empty board
 	
 	# Game loop
-	while moves < grid:
-		# Switch turn between players
-		current_player = players[0] if previous_player == players[1] else players[1]
-		previous_player = current_player
-		
+	while moves < grid:		
 		# Get valid move imput from the current player
 		while True:
 			input_move = input(f"{current_player}, Enter your move \nPlease enter two integers separated by one space (row col): ").split()
@@ -97,6 +92,10 @@ def start_game(game_state, size):
 				winner_name = player1 if winner == players[0] else player2
 				print(f"\nCongratulations {winner_name}, you win!\n")
 				break
+			
+		# Switch turn between players
+		current_player = players[0] if current_player == players[1] else players[1]
+	# When all moves are used and there is no winner
 	else:
 		print("\nIt's a Tie! Well played both of you!\n")
 		
@@ -116,7 +115,7 @@ def play_game():
 	
 	# Initialize the game board and start the game
 	gs = initialize(board_size)
-	start_game(gs, 3)
+	start_game(gs, board_size)
 
 
 # Start the game by calling the Play game function
