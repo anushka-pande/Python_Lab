@@ -105,17 +105,17 @@ def play_game():
 	welcome_message()
 	
 	# user input for the board size and validate input
-	board_size = input("\nEnter the size of the Tic-Tac-Toe board (e.g., 3 for 3x3): ")
+	size = input("\nEnter the size of the Tic-Tac-Toe board (e.g., 3 for 3x3): ")
 
-	if not board_size.isdigit() or int(board_size) < 3:
+	if not size.isdigit() or int(size) < 3:
 		print("Invalid input. Starting default 3x3 board.")
-		board_size = 3
+		size = 3
 	else:
-		board_size = int(board_size)
+		size = int(size)
 	
 	# Initialize the game board and start the game
-	gs = initialize(board_size)
-	start_game(gs, board_size)
+	gs = initialize(size)
+	start_game(gs, size)
 
 
 # Start the game by calling the Play game function
