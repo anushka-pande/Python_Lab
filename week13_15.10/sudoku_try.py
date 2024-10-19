@@ -1,5 +1,6 @@
 import random
 import math
+import time
 
 # Create the empty game state
 def create_game_state(size):
@@ -40,7 +41,13 @@ def create_solution_copy(game_state):
 # Initialization function which initialize the game state (size x size)
 def initialize():
 	# Print welcome message
-	print("Welcome to Sudoku!!")
+	print("***********************************************************")
+	print("*                 Welcome to Sudoku!                      *")
+	print("*             Get ready to have some fun!                 *")
+	print("***********************************************************")
+	time.sleep(2)	# A short pause for dramatice effect
+	print("\nLet's get started!")
+	
 	# User input for the size of the game state
 	size = input("\nEnter size of the Sudoku game state (e.g., 3 for 3x3): ")
 	
@@ -95,10 +102,14 @@ def is_valid_value(game_state, row, col, value, size):
 	return True
 
 def stop_game(game_state, solution, size):
+	print("\nChecking your answers...")
+	time.sleep(2)
+	
 	if check_valid(game_state, size):
 		print("Congratulations! All your entries are valid.")
 	else:
-		print("Game Over! There are invalid entries. Here is the correct solution.")
+		print("Game Over! Some of your entries are invalid.")
+		print("Here is the correct solution:")
 		display_layout(solution, size)
 		
 
